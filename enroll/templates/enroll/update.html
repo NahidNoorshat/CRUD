@@ -1,0 +1,30 @@
+{% extends 'enroll/base.html' %}
+
+{% block content %}
+
+<h1
+  style="
+    color: rgb(175, 138, 90);
+    border: 1px solid gray;
+    text-align: center;
+    background-color: antiquewhite;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  "
+>
+  Student Registration form
+</h1>
+
+<div class="row">
+    <div class="col-sm-8">
+        <h4 class="textcenter alert alert-info">Student update information</h4>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-success btn-sm" value="update">
+            <a href="{% url 'add' %}" class="btn btn-primary btn-sm">Go home</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
